@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Caso2.Data;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Caso2.Controllers
 {
@@ -17,7 +18,7 @@ namespace Caso2.Controllers
         }
 
         [HttpPost]
-        public IActionResult ValidarCredenciales(string Username, string Password)
+        public IActionResult ValidarUsuario(string Username, string Password)
         {
             var usuario = _context.Usuario
                 .FirstOrDefault(u => u.Username == Username && u.Password == Password);
